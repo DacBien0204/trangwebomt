@@ -1,0 +1,98 @@
+$myFont: Helvetica, sans-serif;
+$myColor: black;
+$myFontSize: 18px;
+$bgcl: background-color;
+$background: yellow;
+
+// @if and @else
+@if ($background == red){
+    h1 {
+        display: none;
+    }
+}
+@else{
+    h1{
+        background: silver;
+    }
+}
+
+// mixin and include
+@mixin bordered($color, $width) {
+    border: $width solid $color;
+}
+@mixin text{
+    color:seashell;
+    font-size: 25px;
+    @include bordered(black, 1px );
+}
+
+body{
+    font: {
+        family: $myFont;
+        size: $myFontSize;
+    }
+
+    text: {
+        align: center;
+        transform: lowercase;
+    }
+    color: $myColor;
+    #{$bgcl}: rgba(255, 255, 0, 0.568);
+}
+nav{
+    ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    li{
+        display: inline-block;
+    }
+    a{
+        display: block;
+        padding: 6px 12px;
+        text-decoration: none;
+        $myColor: green;
+        color: $myColor;
+        &:hover{
+            color: red;
+        }
+    }
+}
+p{
+    color: $myColor;
+}
+.danger{
+    @include text;
+    background-color: royalblue;
+}
+
+// @extend
+.extend{
+    @extend .danger;
+}
+
+// List and @each
+$class-name: h2-1 h2-2 h2-3;
+@each $name in $class-name{
+    .#{$name} {
+        background-color: skyblue;
+    }
+}
+
+// @for
+@for $i from 1 through 3 {
+    .h2-#{$i}{
+        background-color: springgreen;
+    }
+}
+
+// while
+$index : 1;
+@while $index <= 3
+{
+    .h2-#{$index}{
+        background-color: teal;
+    }
+    $index : ($index + 1);
+}

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSS</title>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/6fa68c6a3f.js" crossorigin="anonymous"></script>
+    <style>
+        @font-face {
+            font-family: myFirstFont;
+            src: url(SansationLight.woff);
+        }
+
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            font-family: myFirstFont;
+        }
+
+        ::marker {
+            color: red;
+            font-size: 23px;
+        }
+
+        body {
+            background-image: url("background_travel003.png");
+        }
+
+        div {
+            padding: 10px;
+            border: 1px solid black;
+            margin: 10px;
+            font-size: 1.5rem;
+        }
+
+        #rgb {
+            background-color: rgb(208, 200, 255);
+            letter-spacing: 2px;
+            line-height: 1.8;
+            word-spacing: 5px;
+            text-shadow: 2px 2px 5px red;
+        }
+
+        #hex {
+            background-color: #ff6347;
+            text-transform: uppercase;
+        }
+
+        #rgba {
+            background-color: rgba(255, 99, 71, 0.7);
+            text-decoration: underline;
+        }
+
+        #name {
+            background-color: mediumseagreen;
+            direction: rtl;
+            unicode-bidi: bidi-override;
+        }
+
+        /* icons */
+        div i {
+            transform: scale(2.0);
+            margin: 20px;
+            color: sandybrown;
+        }
+
+        /* styling link */
+        a {
+            margin-left: 10px;
+            background-color: white;
+            color: black;
+            border: 2px solid steelblue;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            float: left;
+        }
+
+        a:hover {
+            background-color: steelblue;
+            color: white;
+        }
+
+        /* List */
+        ul {
+            list-style: square inside;
+            background: #ff9999;
+            padding: 20px;
+        }
+
+        ul li {
+            background: white;
+            margin: 5px;
+        }
+
+        /* Table */
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        table {
+            margin: 10px;
+            width: 97%;
+            border-collapse: collapse;
+        }
+
+        /* combinators */
+        div>p {
+            background-color: crimson;
+            color: white;
+        }
+
+        div+p {
+            background-color: black;
+            color: white;
+        }
+
+        /* position */
+        #hello {
+            height: 20px;
+            padding: 10px;
+            background-color: yellowgreen;
+            width: 150px;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+        }
+
+        #hello p {
+            margin-top: 3px;
+            color: black;
+            background-color: transparent;
+        }
+
+        /* Transition */
+        #transition {
+            width: 50px;
+            height: 50px;
+            background-color: cyan;
+            transition: width 2s, height 2s, transform 2s;
+        }
+
+        #transition:hover {
+            width: 200px;
+            height: 100px;
+            transform: rotate(180deg);
+        }
+
+        /* media query */
+        @media only screen and (max-width: 600px) {
+            body {
+                background-image: none;
+                background-color: white;
+            }
+        }
+
+        /* grid */
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto;
+            padding: 10px;
+            background-color: black;
+            grid-gap: 20px;
+        }
+
+        .grid-container>div {
+            padding: 20px;
+            text-align: center;
+            font-size: 30px;
+            margin: 0;
+            background-color: rgb(251, 255, 1);
+        }
+
+        .item1 {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+
+        .item2 {
+            grid-row-start: 2;
+            grid-row-end: 4;
+        }
+
+        /* flexbox */
+        .flex-container {
+            display: flex;
+            color: white;
+            flex-direction: row-reverse;
+            justify-content: space-evenly;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="hello">
+        <p>Hello World!</p>
+    </div>
+    <div id="rgb">RGB values <br> Lorem ipsum dolor sit amet consectetur, adipisicing elit. </div>
+    <div id="hex">HEX values</div>
+    <div id="rgba">RGBA values</div>
+    <div id="name">Color name</div>
+    <div id="icons">
+        <i class="fas fa-cloud"></i>
+        <i class="fas fa-heart"></i>
+        <i class="fas fa-car"></i>
+        <i class="fas fa-file"></i>
+        <i class="fas fa-bars"></i>
+    </div>
+    <!-- link -->
+    <div> <a href="#">This is a link</a>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus eveniet
+        aliquam est inventore, quod molestias debitis laboriosam quibusdam aperiam provident quo incidunt eligendi sint
+        iusto, unde omnis sequi voluptatum sit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
+        provident earum nam. Veritatis cum labore aliquid ex, quod explicabo voluptates laudantium distinctio! Ipsam
+        earum odit vitae repellat in non assumenda.
+    </div>
+    <div id="list">
+        <ul>
+            <li>Coffee</li>
+            <li>Milk</li>
+            <li>Tea</li>
+        </ul>
+    </div>
+    <table>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+        </tr>
+        <tr>
+            <td>Bich</td>
+            <td>Ngoc</td>
+        </tr>
+    </table>
+    <div id="combinators">
+        <p>In the div</p>
+        <section>
+            <p>In a section element</p>
+        </section>
+        <p>In the div</p>
+    </div>
+    <p>After a div</p>
+    <div id="transition"></div>
+    <div class="grid-container">
+        <div class="item1">1</div>
+        <div class="item2">2</div>
+        <div class="item3">3</div>
+        <div class="item4">4</div>
+    </div>
+    <div class="flex-container">
+        <div style="background-color: orange;">1</div>
+        <div style="background-color:darkmagenta;">2</div>
+        <div style="background-color: blueviolet;">3</div>
+    </div>
+</body>
+
+</html>
