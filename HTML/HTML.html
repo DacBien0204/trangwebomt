@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page</title>
+</head>
+
+<body>
+    <!-- Event target -->
+    <p onclick="myTarget(event)">Click on a species to see what type it is:</p>
+
+    <!-- data attribute -->
+    <ul>
+        <li onclick="showDetails(this)" id="owl" data-animal-type="bird">Owl</li>
+        <li onclick="showDetails(this)" id="salmon" data-animal-type="fish">Salmon</li>
+        <li onclick="showDetails(this)" id="tarantula" data-animal-type="spider">Tarantula</li>
+    </ul>
+
+    <!-- change -->
+    <select id="mySelect" onchange="myFunction()">
+        <option value="First">First</option>
+        <option value="Second">Second</option>
+        <option value="Third">Third</option>
+    </select>
+    <input type="text" name="Text" value="Hello" onchange="myFunction2(this.value)">
+
+    <!-- addEventListener -->
+    <button id="btn">Click</button>
+    <p id="result"></p>
+
+    <!-- localStorage -->
+    <p id="name">Saved name is: </p>
+
+    <!-- AJAX -->
+    <div id="demo">
+        <h2>Let AJAX change this text</h2>
+        <button onclick="loadDoc()">Change Content</button>
+    </div>
+
+    <script>
+        // addEventListener
+        var x = document.getElementById("btn");
+        x.addEventListener("click", function () {
+            this.style.backgroundColor = "cyan";
+        });
+
+        // change
+        function myFunction() {
+            var y = document.getElementById("mySelect").value;
+            document.getElementById("result").innerHTML = "Your selected: " + y;
+        }
+        function myFunction2(a) {
+            alert("The input value has changed. The new value is: " + a);
+        }
+
+        // localStorage
+        localStorage.setItem("name", "Ngoc");
+        document.getElementById("name").innerHTML = localStorage.getItem("name");
+
+        // data-* attribute
+        function showDetails(animal) {
+            var animalType = animal.getAttribute("data-animal-type");
+            alert("The " + animal.innerHTML + " is a " + animalType);
+        }
+
+        // target Event
+        function myTarget(event) {
+            alert(event.target.nodeName);
+        }
+
+        // AJAX
+        function loadDoc() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("demo").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "ajax_info.txt", true);
+            xhttp.send();
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Javascript nâng cao</title>
+</head>
+
+<body>
+    <script>
+    // function: context, bind
+        var cat = {
+            name: "Tom",
+            sayHi : function(){
+                console.log("Hi! My name is " + this.name);
+            }
+        };
+        var mouse = {
+            name: "Jerry",
+            age: 5
+        };
+        var say = cat.sayHi.bind(mouse);
+        say();
+    // arrow function
+        const tong = (a, b) => a + b;
+        console.log(tong(2, 2));
+    // template string
+        const courseName = 'Javascript';
+        const description = `Course name: ${courseName} Template string với \${}`;
+        console.log(description);
+    // arguments; default parameters
+        function multipy(a, b = 1){
+            return a * b;
+        }
+        console.log(multipy(5, 2));
+        console.log(multipy(5));
+        function func1(a, b, c) {
+            console.log(arguments[0]);
+        }
+        func1(2, 4, 6);
+    // call
+        function greeting(){
+            console.log(`Hi! ${this.name}. I'm ${this.age}.`);
+        }
+        greeting.call(mouse);
+    // apply
+        function sum1(){
+            const numbers = Array.from(arguments);
+            return numbers.reduce((sum,num) => sum + num, 0);
+        }
+        function average(){
+            const x = sum1.apply(null, arguments);
+            return x/arguments.length;
+        }
+        console.log(average(2,5,3,6));
+    // Enhanced object literals
+        const name = 'Tom';
+        const cat2 = {
+            name,
+            run() {
+                console.log(`${this.name} is running`);
+            }
+        };
+        cat2.run();
+    // class
+        class Mouse{
+            constructor(name){
+                this.name = name;
+            }
+            run() {
+                console.log(`${this.name} is running`);
+            }
+        }
+        const mouse2 = new Mouse('Mickey');
+        mouse2.run();
+    // class inheritance
+        class Animal{
+            constructor(name){
+                this.name = name;
+            }
+            eat() {
+                console.log(`${this.name} is eating`);
+            }
+        }
+        class Bird extends Animal{
+            fly(){
+                console.log(`${this.name} is flying`);
+            }
+        }
+        const bird = new Bird('Smart');
+        bird.fly();
+    // method overriding
+        class CoffeeMachine{
+            makeCoffee(){
+                console.log('making coffee...');
+            }
+        }
+
+        class SpecialCoffeeMachine{
+            makeCoffee(callback){
+                console.log('making special coffee...');
+                callback();
+            }
+        }
+        const cfmachine = new SpecialCoffeeMachine();
+        cfmachine.makeCoffee(function() {
+            console.log('Bring it to the customer');
+        });
+    // super
+        class Rectangle {
+            constructor(height, width){
+                this.name = 'Rectangle';
+                this.height = height;
+                this.width = width;
+            }
+            sayName(){
+                console.log(`Hi, I am a ${this.name}.`);
+            }
+            get area(){
+                return this.height * this.width;
+            }
+            set area(value){
+                this._area = value;
+            }
+        }
+        class Square extends Rectangle {
+            constructor(length){
+                super(length, length);
+                this.name = 'Square';
+            }
+        }
+        const sqr = new Square(3);
+        console.log(`The area of ${sqr.name} is`, sqr.area);
+    // static
+        class Foo{
+            static someMethod(){
+                console.log('some method');
+            }
+            anotherMethod(){
+                console.log('another method');
+            }
+        }
+        Foo.someMethod();
+        const foo = new Foo();
+        foo.anotherMethod();
+    // rest
+        function sum3(...nums){
+            return nums.reduce((a, b) => a + b);
+        }
+        console.log(sum3(2,6,8,1,3,5));
+    // spread
+        const a = [1,2,3];
+        const b = [0,...a,4];
+        console.log(b);
+    // high order functions
+        function waitAndRun(ms, func) {
+            setTimeout(func, ms);
+        }
+        function run(){
+            console.log('Running');
+        }
+        waitAndRun(2000,run);
+    // destructuring
+        
+    </script>
+</body>
+
+</html>

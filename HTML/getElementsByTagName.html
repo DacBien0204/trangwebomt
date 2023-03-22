@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>getElementsByTagName</title>
+    </head>
+    <body>
+        <ul>
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Milk</li>
+        </ul>
+        <button onclick="myFunction()">Click</button>
+        <p id="example">third li element</p>
+        <p id="length">li elements</p>
+        <p>Change</p>
+        <p id="display">the innerHTML of the button element</p>
+        <script>
+            function myFunction(){
+                var x = document.getElementsByTagName("li");
+                document.getElementById("example").innerHTML = x[2].innerHTML;
+                document.getElementById("length").innerHTML = x.length + " li elements";
+                document.getElementsByTagName("p")[2].innerHTML = "Hello World!";
+                
+                var y = document.getElementsByTagName("p");
+                var i;
+                for(i = 0; i < y.length; i++){
+                    y[i].style.backgroundColor = "yellow";
+                }
+
+                var z = document.getElementsByTagName("*");
+                document.getElementById("display").innerHTML = z[8].innerHTML;
+            }
+        </script>
+    </body>
+</html>
