@@ -1,0 +1,418 @@
+@font-face {
+    font-family: Font1;
+    src: url("../fonts/Poppins-Regular.ttf");
+}
+@font-face {
+    font-family: Font2;
+    src: url("../fonts/Inter-Regular.ttf");
+}
+@font-face {
+    font-family: Font3;
+    src: url("../fonts/Poppins-Bold.ttf");
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #F5F6F8;
+    width: 1440px;
+    font-family: Font1;
+    font-size: 16px;
+}
+/* -----------------------REUSABLE---------------------- */
+h2{
+    font-size: 45px;
+    letter-spacing: -0.1%;
+    text-align: center;
+    color: #1E2A39;
+    line-height: 58px;
+    margin-top: 140px;
+    font-family: Font3;
+}
+.p-long{
+    color: #5C6272;
+    text-align: center;
+    line-height: 28px;
+    margin-top: 16px;
+}
+.container{
+    display: inline-flex;
+    flex-direction: row;
+    margin-top: 80px;
+}
+.card-title{
+    font-size: 24px;
+    font-family: Font3;
+    line-height: 36px;
+    margin-top: 55px;
+    color: #1E2A39;
+    letter-spacing: -0.02em;
+    margin-bottom: 0;
+}
+
+.p-card{
+    color: #5C6272;
+    line-height: 26px;
+    margin-top: 8px;
+    margin-bottom: 0;
+    width: 254px;
+}
+.row{
+    margin: 0;
+}
+h6{
+    width: 100px;
+    line-height: 24px;
+    letter-spacing: 0.17em;
+    color: #4141A5;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+/* --------------------------HEADER---------------------- */
+/* Background */
+header{
+    background-image: linear-gradient(102.17deg, rgba(2, 0, 17, 0.76) 6.5%, rgba(23, 31, 65, 0.569182) 42.52%, rgba(21, 31, 66, 0.51) 52.61%, rgba(21, 34, 74, 0.604157) 61.37%, rgba(0, 10, 31, 0.8) 100%), url("../img/Background.png");
+    height: 800px;
+    color: white;
+    padding-top: 29px;
+}
+/* Navbar */
+#nav-bar{
+    margin-bottom: 135px;
+}
+nav{
+    height: 56px;
+}
+.logo{
+    position: absolute;
+    left: 137px;
+    width: 114px;
+    height: 24px;
+    top: 13px;
+    margin-right: 262px;
+}
+
+.nav-item{
+    margin-right: 23px;
+}
+
+.nav-link{
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 14px;
+}
+.create-acc{
+    position: absolute;
+    left: 1153px;
+    width: 152px;
+    height: 56px;
+    border: 1.5px solid #777F96;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-weight: bold;
+    color: #FFF9F8;
+    padding-top: 15px;
+    font-family: Font2;
+    font-size: 14px;
+}
+/* Heading */
+#heading-text h1{
+    font-family: Font3;
+    text-align: center;
+    font-size: 62px;
+    letter-spacing: -0.01em;
+    line-height: 78px;
+}
+
+#heading-text p{
+    font-family: Font2;
+    font-size: 18px;
+    text-align: center;
+    line-height: 28px;
+    opacity: 0.88;
+    margin-top: 20px;
+}
+/* Search */
+#search-box{
+    position: absolute;
+    top:532px;
+    width: 746px;
+    font-family: Font2;
+}
+
+.item1{
+    position: absolute;
+    left: 347px;
+    display: inline-flex;
+    flex-direction: row;
+    width: 574px;
+    height: 74px;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    margin-right: 20px;
+}
+
+.item1 input{
+    border-top: none;
+    border-bottom: none;
+    border-radius: 0;
+    height: 74px;
+}
+
+.item1 input::placeholder{
+    color:#AFAEB4;
+}
+.item1-1{
+    width: 254px;
+}
+
+.item1-2{
+    width: 159px;
+}
+
+.item1-3 button{
+    width: 159px;
+    background-color: white;
+    height: 74px;
+}
+
+.item1-3 button, a{
+    color:#AFAEB4;
+}
+
+/* Button search */
+.item2{
+    position: absolute;
+    left: 941px;
+}
+.search{
+    background-color: #34A5E4;
+    color: white;
+    font-weight: 700;
+    width: 152px;
+    height: 74px;
+    padding-top: 7px;
+}
+/* --------------------HOW IT WORKS---------------------- */
+#how-it-works{
+    height: 756px;
+}
+.provide{   
+    margin-left:191px;
+}
+/* Picture */
+.card{
+    width: 326px;
+    height:306px;
+    border-radius: 8px;
+    margin-right: 40px;
+    padding: 30px;
+}
+.card-picture{
+    width: 90px;
+    height: 90px;
+    background-color: white;
+    box-shadow: 0px 20px 80px -15px rgba(45, 51, 60, 0.2);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+/* ------------------------ABOUT US---------------------- */
+#about-us{
+    margin-left: 140px;
+    height: 910px;
+}
+h3{
+    width: 415px;
+    font-size: 40px;
+    line-height: 52px;
+    letter-spacing: -0.5px;
+    color: #292929;
+    font-family: Font3;
+    margin-top: 10px;
+}
+#about-us .p-long{
+    text-align: left;
+    width: 472px;
+    margin-left: 171px;
+    margin-top: 19px;
+    height: 84px;
+}
+
+/* -------------------------PLACES---------------------- */
+#places{
+    height: 783px;
+}
+#places h2{
+    margin-top: 94px;
+    margin-bottom: 0;
+}
+.place{
+    margin-left:103px;
+}
+.card-place{
+    width: 282px;
+    background-color: white;
+    border-radius: 12px;
+    height: 385px;
+    padding: 16px 15px;
+    margin-right: 35px;
+}
+.card-place .card-title{
+    line-height: 24px;
+    margin-top: 22px;
+}
+
+.card-place .row{
+    margin-top: 20px;
+    line-height: 16px;
+}
+.duration, i{
+    color: #7C8290;
+    letter-spacing: -0.01em;
+}
+.price{
+    color: #EE6D52;
+    font-family: Font3;
+    letter-spacing: -0.01em;
+    margin-left: 37px;
+}
+/* ------------------------------PARTNERS------------------- */
+#partners{
+    height: 500px;
+}
+#partners h2{
+    margin-top: 76px;
+}
+.partner{
+    margin-left: 204px;
+    justify-content: center;
+}
+.partner img{
+    margin-right: 70px;
+}
+/* --------------------------CITIES------------------------- */
+#cities{
+    height: 922px;
+    margin-left: 140px;
+}
+#cities h6{
+    width: 107px;
+}
+#cities .p-long{
+    text-align: left;
+    width: 394px;
+    height: 56px;
+}
+/* ------------------------TESTIMONIALS--------------------- */
+#testimonials{
+    height: 775px;
+    margin-left: 140px;
+}
+#testimonials .p-long{
+    text-align: left;
+    width: 370px;
+    height: 56px;
+}
+/* ------------------------SUBSCRIPTION--------------------- */
+#subscription{
+    background: url("../img/bg-form.png");
+    width: 1170px;
+    height: 248px;
+    position: absolute;
+    top: 5640px;
+    left: 135px;
+    border-radius: 16px;
+    padding: 62px 90px;
+}
+#subscription .container{
+    margin-top: 0;
+}
+#subscription h3{
+    color: white;
+    width: 346px;
+}
+#subscription p{
+    width: 370px;
+    text-align: left;
+    color: white;
+}
+.item{
+    width: 488px;
+}
+.email{
+    position: relative;
+    margin-top: -95px;
+    margin-left: 502px;
+}
+.email-input{
+    height: 71px;
+    padding-right: 100px;
+    box-sizing: border-box;
+}
+.email-button{
+    position: absolute;
+    width: 130px;
+    height: 55px;
+    right: 8px;
+    top: 8px;
+    bottom: 8px;
+    line-height: 1 !important;
+    z-index: 4;
+    background-color: #0F415C;
+    box-shadow: 0px 12px 20px -5px #17177E1A;
+}
+/* --------------------------FOOTER---------------------- */
+footer{
+    height: 450px;
+    background-color: #10100E;
+    padding: 232px 135px;
+}
+.icon{
+    width: 28px;
+    height: 28px;
+    border-radius: 31px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    margin-right: 12px;
+}
+footer .p-long{
+    width: 240px;
+    text-align: left;
+    color: white;
+    margin-top: 40px;
+    opacity: 0.5;
+}
+.col-md-2{
+    margin-top: 30px;
+}
+.social-link{
+    width: 140px;
+    margin-right: 54px;
+    margin-bottom: 20px;
+}
+.recent-post{
+    text-align: right;
+}
+h5{
+    font-size: 20px;
+    font-family: Font3;
+    line-height: 30px;
+    color: white;
+    margin-bottom: 20px;
+}
+.recent-post p{
+    margin-bottom: 8px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    opacity: 0.5;
+    color: white;
+}
